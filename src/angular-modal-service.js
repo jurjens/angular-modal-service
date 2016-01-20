@@ -94,6 +94,9 @@
 
                       //  We can now clean up the scope
                       modalScope.$destroy();
+                      
+                      // And remove the modal-open class from the body
+                      body.removeClass('modal-open');
 
                       //  Unless we null out all of these objects we seem to suffer
                       //  from memory leaks, if anyone can explain why then I'd
@@ -133,6 +136,9 @@
               // append to body when no custom append element is specified
               appendChild(body, modalElement);
             }
+            
+            // Add modal-open class to body
+            body.addClass('modal-open');
 
             //  We now have a modal object...
             var modal = {
